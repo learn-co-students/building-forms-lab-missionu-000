@@ -14,12 +14,12 @@ import Adapter from 'enzyme-adapter-react-16'
 configure({ adapter: new Adapter() })
 
 describe('BandInput component', () => {
-  it('has an text input field', () => {
+  it('has a text input field', () => {
     const wrapper = shallow(<BandInput />)
     expect(wrapper.find('input').first().type()).to.equal('input');
   });
 
-  it('has an initial state with text key set to empty string', () => {
+  it('has an initial state with name key set to empty string', () => {
     const wrapper = shallow(<BandInput />)
     expect(wrapper.state(), "BandInput state was not found").to.exist
     expect(wrapper.state('name')).to.equal('')
@@ -99,7 +99,7 @@ describe('Bands Container', () => {
     expect(wrapper.find(BandsContainer)).to.have.length(1);
   });
 
-  it('renders a list element for each of the bands in ', () => {
+  it('renders a list element for each band', () => {
     const store = createStore(manageBand)
 
     let spy = sinon.spy(store, "dispatch")
